@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Bookstore</h1>
+
+        <!-- Login Form -->
+        <div id="login-section">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-message"></p>
+        </div>
+
+        <!-- Books Section -->
+        <div id="books-section" style="display: none;">
+            <h2>Books List</h2>
+            <select id="sort" onchange="fetchBooks()">
+                <option value="">Sort by</option>
+                <option value="name_asc">Name (A-Z)</option>
+                <option value="price_asc">Price (Low-High)</option>
+                <option value="price_desc">Price (High-Low)</option>
+            </select>
+            <input type="text" id="search" placeholder="Search by category" oninput="fetchBooks()">
+            <button onclick="fetchBooks()">Load Books</button>
+            <ul id="books"></ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
